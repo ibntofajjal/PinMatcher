@@ -30,3 +30,20 @@ document.getElementById("key-pad").addEventListener("click", function(event){
         calcInput.value = newNumber;
     }
 });
+
+function verifyPin() {
+    const pin = document.getElementById("display-pin").value;
+    const typedNumbers = document.getElementById("typed-numbers").value;
+
+    // Matched && Wrong Code : Showing Message
+    const successMsg = document.getElementById("notify-success");
+    const failMsg = document.getElementById("notify-fail");
+    if(pin == typedNumbers) {
+        successMsg.style.display = "block";
+        failMsg.style.display = "none";
+    } else {
+        failMsg.style.display = "block";
+        successMsg.style.display = "none";
+    }
+
+};
